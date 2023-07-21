@@ -9,7 +9,7 @@ Like so:
 
 ```
 function rubycode
-  /Users/yavor/Desktop/work/ruby_scripts/ruby_script.rb $argv
+  $your absolute path to - ruby_script.rb $argv
 end
 ```
 
