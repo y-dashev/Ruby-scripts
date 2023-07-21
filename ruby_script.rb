@@ -16,7 +16,6 @@ opts = GetoptLong.new(
 # heroku db url
 heroku_database_url = nil
 
-# 
 user = nil
 password = ''
 db_name = ''
