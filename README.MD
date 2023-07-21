@@ -15,3 +15,9 @@ end
 
 Then you can use the script to get the heroku db  and hook it with the local one :) 
 STILL NEEDS TO BE TESTED!
+
+example usage: 
+
+```
+rubycode --db_url "DB_URL" --db_name 'LOCALDB_NAME'  -u 'LOCAL USERNAME[OPTIONAL]'
+```
