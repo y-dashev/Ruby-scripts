@@ -39,8 +39,6 @@ hello [OPTION] ...
     when '--db_name'
       db_name = arg
     when '--app_name'
-      puts opt
-
       if arg == ''
         exit 0
         return
