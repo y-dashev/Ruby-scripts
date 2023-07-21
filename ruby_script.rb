@@ -5,7 +5,7 @@ require 'getoptlong'
 
 opts = GetoptLong.new(
   [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
-  [ '--db_url', '-d', GetoptLong::REQUIRED_ARGUMENT ],
+  [ '--app_name', '-a', GetoptLong::REQUIRED_ARGUMENT ],
   [ '--db_name', '-n', GetoptLong::REQUIRED_ARGUMENT ],
   [ '--user', '-u', GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--password', '-p', GetoptLong::OPTIONAL_ARGUMENT ],
@@ -28,8 +28,8 @@ hello [OPTION] ...
 -h, --help:
    show help
 
---db_url [db_url]:
-   heroku app db url 
+--app_name [app_name]:
+   heroku app name needed for db url
 
       EOF
     when '--password'
@@ -38,14 +38,14 @@ hello [OPTION] ...
       user = arg
     when '--db_name'
       db_name = arg
-    when '--db_url'
+    when '--app_name'
       puts opt
 
       if arg == ''
         exit 0
         return
       else
-        heroku_database_url = arg
+        heroku_database_url = `heroku config:get DATABASE_URL --app=#{arg}`.strip 
       end
   end
 end
