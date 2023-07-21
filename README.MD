@@ -19,5 +19,5 @@ STILL NEEDS TO BE TESTED!
 example usage: 
 
 ```
-rubycode --db_url "[DB_URL]" --db_name '[LOCAL_DB_NAME]'  -u '[LOCAL USERNAME][OPTIONAL]'
+rubycode --app_name "[DB_URL]" --db_name '[LOCAL_DB_NAME]'  -u '[LOCAL USERNAME][OPTIONAL]'
 ```
