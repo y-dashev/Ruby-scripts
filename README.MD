@@ -1,8 +1,5 @@
 Creating some ruby scripts
-
-
-Usage:
-rubycode --app_name 'app_name' --db_url 'db_url' -u 'yavor' -p 'password'                                           
+                               
 
 In case you are using the 'fish' terminal you need to add the function with the path to the script
 Like so:
