@@ -19,5 +19,6 @@ STILL NEEDS TO BE TESTED!
 example usage: 
 
 ```
+// In your root folder
 rubycode --app_name "[DB_URL]" --db_name '[LOCAL_DB_NAME]'  -u '[LOCAL USERNAME][OPTIONAL]'
 ```
