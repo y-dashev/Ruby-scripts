@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# Ruby code chmod +x myscript.sh"
 
 require 'open3'
 require 'getoptlong'
