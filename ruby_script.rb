@@ -3,6 +3,8 @@
 require 'open3'
 require 'getoptlong'
 
+# This script gets heroku database and applies it to the local project
+
 opts = GetoptLong.new(
   [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
   [ '--app_name', '-a', GetoptLong::REQUIRED_ARGUMENT ],
