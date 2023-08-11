@@ -48,9 +48,7 @@ hello [OPTION] ...
   end
 end
 
-
 return if heroku_database_url.nil?
-
 
 # Backup and restore database
 def backup_database(heroku_database_url, backup_file)
