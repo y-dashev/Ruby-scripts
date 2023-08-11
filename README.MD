@@ -6,7 +6,7 @@ Like so:
 
 ```
 function rubycode
-  $your absolute path to - ruby_script.rb $argv
+  [$your absolute path to - ruby_script.rb] $argv
 end
 ```
 
