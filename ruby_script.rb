@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'open3'
 require 'getoptlong'
@@ -6,12 +7,11 @@ require 'getoptlong'
 # This script gets heroku database and applies it to the local project
 
 opts = GetoptLong.new(
-  [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
-  [ '--app_name', '-a', GetoptLong::REQUIRED_ARGUMENT ],
-  [ '--db_name', '-n', GetoptLong::REQUIRED_ARGUMENT ],
-  [ '--user', '-u', GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--password', '-p', GetoptLong::OPTIONAL_ARGUMENT ],
-
+  ['--help', '-h', GetoptLong::NO_ARGUMENT],
+  ['--app_name', '-a', GetoptLong::REQUIRED_ARGUMENT],
+  ['--db_name', '-n', GetoptLong::REQUIRED_ARGUMENT],
+  ['--user', '-u', GetoptLong::OPTIONAL_ARGUMENT],
+  ['--password', '-p', GetoptLong::OPTIONAL_ARGUMENT]
 )
 
 # heroku db url
@@ -23,30 +23,29 @@ db_name = ''
 
 opts.each do |opt, arg|
   case opt
-    when '--help'
-      puts <<-EOF
-hello [OPTION] ... 
+  when '--help'
+    puts <<~EOF
+      hello [OPTION] ...#{' '}
 
--h, --help:
-   show help
+      -h, --help:
+        show help
 
---app_name [app_name]:
-   heroku app name needed for db url
+      --app_name [app_name]:
+        heroku app name needed for db url
 
-      EOF
-    when '--password'
-      password = arg
-    when '--user'
-      user = arg
-    when '--db_name'
-      db_name = arg
-    when '--app_name'
-      if arg == ''
-        exit 0
-        return
-      else
-        heroku_database_url = `heroku config:get DATABASE_URL --app=#{arg}`.strip 
-      end
+    EOF
+  when '--password'
+    password = arg
+  when '--user'
+    user = arg
+  when '--db_name'
+    db_name = arg
+  when '--app_name'
+    if arg == ''
+      exit 0
+    else
+      heroku_database_url = `heroku config:get DATABASE_URL --app=#{arg}`.strip
+    end
   end
 end
 
@@ -59,7 +58,7 @@ def backup_database(heroku_database_url, backup_file)
   puts 'Backup completed!'
 end
 
-def restore_database(db_name,backup_file)
+def restore_database(db_name, backup_file)
   puts 'Restoring the local database...'
   `pg_restore -d "#{db_name}" --no-owner --no-privilege --data-only "#{backup_file}"`
   puts 'Restore completed!'
