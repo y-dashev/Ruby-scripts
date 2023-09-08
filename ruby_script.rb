@@ -44,7 +44,7 @@ opts.each do |opt, arg|
     if arg == ''
       exit 0
     else
-      heroku_database_url = `heroku config:get DATABASE_URL --app=#{arg}`.strip
+      heroku_database_url = `heroku config:get DATABASE_URL --remote=#{arg}`.strip
     end
   end
 end
