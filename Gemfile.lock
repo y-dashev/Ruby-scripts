@@ -1,0 +1,12 @@
+GEM
+  specs:
+    open3 (0.1.1)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  open3 (~> 0.1.0)
+
+BUNDLED WITH
+   2.2.15
