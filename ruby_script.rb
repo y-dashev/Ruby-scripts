@@ -6,8 +6,9 @@ require 'getoptlong'
 
 DATABASE_URL_COMMAND = 'heroku config:get DATABASE_URL --remote='
 
+# rubocop:disable Metrics/MethodLength
 def print_help
-  puts <<~EOF
+  puts `
     Usage: #{File.basename(__FILE__)} [OPTIONS]
 
     Options:
@@ -25,9 +26,9 @@ def print_help
 
       -p, --password PASSWORD:
         Optional: Database password.
-
-  EOF
+  `
 end
+# rubocop:enable Metrics/MethodLength
 
 def run_command(command)
   stdout, stderr, status = Open3.capture3(command)
