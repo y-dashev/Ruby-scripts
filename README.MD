@@ -1,4 +1,4 @@
-Creating some ruby scripts
+Ruby script so for importing heroku PG database to a project.
                                
 
 In case you are using the 'fish' terminal you need to add the function with the path to the script
