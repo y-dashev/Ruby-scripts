@@ -1,12 +1,12 @@
-Creating some ruby scripts
+Ruby script so for importing heroku PG database to a project.
                                
 
 In case you are using the 'fish' terminal you need to add the function with the path to the script
 Like so:
 
 ```
-function rubycode
-  [$your absolute path to - ruby_script.rb] $argv
+function pg_db_import # or you can name it as you want 
+  [$your absolute path to - pg_db_import.rb] $argv
 end
 ```
 
